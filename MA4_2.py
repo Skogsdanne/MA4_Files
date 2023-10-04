@@ -1,5 +1,5 @@
 #!/usr/bin/env python3.9
-#token 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
+
 from person import Person
 
 import random
