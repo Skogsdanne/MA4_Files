@@ -34,7 +34,7 @@ def main():
         print(f.getAge())
         print(f.getDecades())
 
-    if False: #plotta tiden för olika
+    if True: #plotta tiden för olika
         n = range(30, 45)
         y_py = []
         y_numba = []
@@ -59,13 +59,14 @@ def main():
         pyplot.plot(n, y_c, "b", label ="C++")
         pyplot.xlabel("n")
         pyplot.ylabel("Time(s)")
-        pyplot.savefig("fib_time.png")
+        pyplot.savefig("30_45fib.png")
         
-    if True:
+    if False:
         n = range(20, 30)
         y_py = []
         y_numba = []
-        
+        #Numba tar extra tid första loopen för den ska
+        #kompilera allt först eller nåt
         
         for i in n:
             f=Person(i)
@@ -85,8 +86,11 @@ def main():
         
         pyplot.xlabel("n")
         pyplot.ylabel("Time(s)")
-        pyplot.savefig("fib_time.png")
+        pyplot.savefig("20_30fib.png")
         
-
+    if True:
+        print(f.fib(47), "n = 47 och C++")
+        print(fib_numba(47), "n = 47 och Numba")
+        
 if __name__ == '__main__':
 	main()
