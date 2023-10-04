@@ -34,7 +34,7 @@ def main():
         print(f.getAge())
         print(f.getDecades())
 
-    if True: #plotta tiden för olika
+    if False: #plotta tiden för olika
         n = range(30, 45)
         y_py = []
         y_numba = []
@@ -61,6 +61,31 @@ def main():
         pyplot.ylabel("Time(s)")
         pyplot.savefig("fib_time.png")
         
+    if True:
+        n = range(20, 30)
+        y_py = []
+        y_numba = []
+        
+        
+        for i in n:
+            f=Person(i)
+            t0 = pc()
+            fib_py(i)
+            t1 = pc()
+            fib_numba(i)
+            t2 = pc()
+            
+            
+            y_py.append(t1-t0)
+            y_numba.append(t2-t1)
+           
+            
+        pyplot.plot(n, y_py, "r", label = "Python")
+        pyplot.plot(n, y_numba, "g", label = "Python with Numba")
+        
+        pyplot.xlabel("n")
+        pyplot.ylabel("Time(s)")
+        pyplot.savefig("fib_time.png")
         
 
 if __name__ == '__main__':
