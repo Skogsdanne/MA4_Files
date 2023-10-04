@@ -7,7 +7,7 @@ def main():
 	print(f.getAge())
 	print(f.getDecades())
 	f.setAge(51)
-	print(f.get())
+	print(f.getAge())
 	print(f.getDecades())
 
 if __name__ == '__main__':
