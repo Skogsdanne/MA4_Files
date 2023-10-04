@@ -1,5 +1,5 @@
 #!/usr/bin/env python3.9
-
+#token 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
 from person import Person
 
 import random
@@ -35,7 +35,7 @@ def main():
         print(f.getDecades())
 
     if True: #plotta tiden för olika
-        n = range(5, 10)
+        n = range(30, 45)
         y_py = []
         y_numba = []
         y_c = []
