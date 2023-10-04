@@ -4,7 +4,7 @@ from person import Person
 
 import random
 import math
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as pyplot
 from time import perf_counter as pc
 from time import sleep as pause
 import concurrent.futures as future
@@ -54,7 +54,12 @@ def main():
             y_numba.append(t2-t1)
             y_c.append(t3-t2)
             
-        print(y_py, y_numba, y_c)
+        pyplot.plot(n, y_py, "r", label = "Python")
+        pyplot.plot(n, y_numba, "g", label = "Python with Numba")
+        pyplot.plot(n, y_c, "b", label ="C++")
+        pyplot.xlabel("n")
+        pyplot.ylabel("Time(s)")
+        pyplot.savefig("fib_time.png")
         
         
 
