@@ -34,7 +34,7 @@ def main():
         print(f.getAge())
         print(f.getDecades())
 
-    if True: #plotta tiden för olika
+    if False: #plotta tiden för olika
         n = range(30, 45)
         y_py = []
         y_numba = []
@@ -89,8 +89,9 @@ def main():
         pyplot.savefig("20_30fib.png")
         
     if True:
-        print(f.fib(47), "n = 47 och C++")
-        print(fib_numba(47), "n = 47 och Numba")
+        n = 47
+        print(f.fib(), "n = 47 och C++")
+        print(fib_numba(n), "n = 47 och Numba")
         
 if __name__ == '__main__':
 	main()
