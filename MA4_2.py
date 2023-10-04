@@ -90,6 +90,7 @@ def main():
         
     if True:
         n = 47
+        f = Person(n)
         print(f.fib(), "n = 47 och C++")
         print(fib_numba(n), "n = 47 och Numba")
         
