@@ -1,5 +1,13 @@
 #!/usr/bin/env python3.9
 
+"""
+Student: Daniel Nilsson 
+Mail: d.nilsson1998@gmail.com
+Reviewed by: Nasser
+Reviewed date: 5/10
+"""
+
+
 from person import Person
 
 import random
@@ -34,7 +42,7 @@ def main():
         print(f.getAge())
         print(f.getDecades())
 
-    if False: #plotta tiden för olika
+    if True: #plotta tiden för olika
         n = range(30, 45)
         y_py = []
         y_numba = []
@@ -57,6 +65,7 @@ def main():
         pyplot.plot(n, y_py, "r", label = "Python")
         pyplot.plot(n, y_numba, "g", label = "Python with Numba")
         pyplot.plot(n, y_c, "b", label ="C++")
+        pyplot.yscale('log')
         pyplot.xlabel("n")
         pyplot.ylabel("Time(s)")
         pyplot.savefig("30_45fib.png")
@@ -88,11 +97,14 @@ def main():
         pyplot.ylabel("Time(s)")
         pyplot.savefig("20_30fib.png")
         
-    if True:
+    if False:
         n = 47
         f = Person(n)
         print(f.fib(), "n = 47 och C++")
         print(fib_numba(n), "n = 47 och Numba")
-        
+        #-1323752223 n = 47 och C++
+        #2971215073 n = 47 och Numba
+        #antar c++ får nån knas int overflow?
+        #yes, 2147483647 är max integer i c++
 if __name__ == '__main__':
 	main()

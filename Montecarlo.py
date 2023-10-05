@@ -1,4 +1,10 @@
 "montecarlo"
+"""
+Student: Daniel Nilsson 
+Mail: d.nilsson1998@gmail.com
+Reviewed by: Nasser
+Reviewed date: 5/10
+"""
 
 import random
 import math
@@ -52,7 +58,7 @@ def hypersphere_paralell(n, d, proc):
         processes = []
         result = []
         npp = n//proc
-        for i in range(10):
+        for i in range(10): #gör 10 processer
             p = PPE.submit(hypersphere, npp, d)
             processes.append(p)
         for p in processes:
@@ -63,15 +69,17 @@ def hypersphere_paralell(n, d, proc):
 
 
 def main():
-    if False:
+    if True:
         montecarlo(1000)
         pyplot.savefig('MonteCarlo_1k.png')
         montecarlo(10000)
         pyplot.savefig('MonteCarlo_10k.png')
         montecarlo(100000)
         pyplot.savefig('MonteCarlo_100k.png')
-        
-    if True: #1.2 och 1.3
+        #n: 1000 nc: 783 , uppskattat pi: 3.132 , pi: 3.141592653589793
+        #n: 10000 nc: 7885 , uppskattat pi: 3.154 , pi: 3.141592653589793
+        #n: 100000 nc: 78495 , uppskattat pi: 3.1398 , pi: 3.141592653589793""""""
+    if False: #1.2 och 1.3
         n = 10000000
         d = 11
 
@@ -86,6 +94,25 @@ def main():
         hypersphere_exact(11)
         print(f'Seriel time: {round(t1-t0,2)}s')
         print(f'Parallell tid: {round(t2-t1,2)}s')
+
+""        
+#Serial
+#dimensioner: 11 , samples: nc:  9128 approx:  1.8694144
+#Parallell
+#dimensioner: 11 , samples: nc:  943 approx:  1.931264
+#dimensioner: 11 , samples: nc:  871 approx:  1.783808
+#dimensioner: 11 , samples: nc:  918 approx:  1.880064
+#dimensioner: 11 , samples: nc:  889 approx:  1.820672
+#dimensioner: 11 , samples: nc:  940 approx:  1.92512
+#dimensioner: 11 , samples: nc:  959 approx:  1.964032
+#dimensioner: 11 , samples: nc:  1002 approx:  2.052096
+#dimensioner: 11 , samples: nc:  938 approx:  1.921024
+#dimensioner: 11 , samples: nc:  865 approx:  1.77152
+#dimensioner: 11 , samples: nc:  885 approx:  1.81248
+#hypersphere_paralell dimensioner: 11 , samples: 10000000 , processes:  10 , approx:  1.8862079999999999
+#dimensioner:  11 , exakt hypersfär: 1.8841038793898994
+#Seriel time: 45.29s
+#Parallell tid: 12.91s""
         
 if __name__ == '__main__':
 	main()
